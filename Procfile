@@ -1,1 +1,1 @@
-web: java -jar target/*.jar
+web: java -jar target/rackbong-proxy-0.0.1.jar
