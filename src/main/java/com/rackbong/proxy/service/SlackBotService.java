@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import com.rackbong.proxy.vo.SlackMessage;
@@ -21,8 +18,6 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class SlackBotService {
 
-	@Value("${slackBotToken}")
-	private String slackToken;
 	@Value("${slackApiUrl}")
 	private String slackApiUrl;
 
@@ -34,7 +29,7 @@ public class SlackBotService {
 
 			// Header set
 			httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-			httpHeaders.setBearerAuth(slackToken);
+			httpHeaders.setBearerAuth(message.getToken());
 
 			// Body set
 			Map<String, String> body = new HashMap<String, String>();

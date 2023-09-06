@@ -6,4 +6,5 @@ import lombok.Data;
 public class SlackMessage {
 	private String text;
 	private String channel;
+	private String token;
 }
