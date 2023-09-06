@@ -34,12 +34,12 @@ public class SlackBotService {
 
 			// Header set
 			httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-			httpHeaders.setBearerAuth(slackToken);
+			// httpHeaders.setBearerAuth(slackToken);
 
 			// Body set
 			Map<String, String> body = new HashMap<String, String>();
 			body.put("text", message.getText());
-			body.put("channel", message.getChannel());
+			// body.put("channel", message.getChannel());
 
 			// Message
 			HttpEntity<?> requestMessage = new HttpEntity<>(body, httpHeaders);
